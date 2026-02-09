@@ -32,6 +32,16 @@ const serviceDisplayNames: Record<string, string> = {
 
 // Metadata for location-specific service pages
 const locationMeta: Record<string, Record<string, { title: string; description: string }>> = {
+  'pressure-washing': {
+    'liverpool': {
+      title: 'Pressure Washing Liverpool | R.R.M External Cleaning',
+      description: 'Professional pressure washing in Liverpool. Driveway cleaning, patio cleaning, commercial pressure washing, and exterior cleaning across Merseyside. Fully insured since 2016. Call 07845 463877.',
+    },
+    'warrington': {
+      title: 'Pressure Washing Warrington | R.R.M External Cleaning',
+      description: 'Professional pressure washing in Warrington. Driveway cleaning, patio cleaning, commercial pressure washing, and exterior cleaning across Cheshire. Fully insured since 2016. Call 07845 463877.',
+    },
+  },
   'gutter-cleaning': {
     'skelmersdale': {
       title: 'Gutter Cleaning Skelmersdale | R.R.M External Cleaning',
@@ -240,6 +250,157 @@ export default async function ServiceDynamicPage({ params }: PageProps) {
     });
 
     // VideoObject schema for pages with embedded video
+    if (serviceSlug === 'pressure-washing' && locationSlug === 'warrington') {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: 'Professional Pressure Washing and Exterior Cleaning in Warrington by R.R.M External Cleaning Specialist',
+        description: 'Watch R.R.M External Cleaning Specialist carry out professional pressure washing and exterior cleaning work in Warrington, Cheshire. This video demonstrates our commercial-grade equipment, careful technique, and quality results on residential and commercial properties.',
+        thumbnailUrl: 'https://img.youtube.com/vi/t8QfsOEQrgM/maxresdefault.jpg',
+        uploadDate: '2024-01-15',
+        embedUrl: 'https://www.youtube.com/embed/t8QfsOEQrgM',
+        contentUrl: 'https://www.youtube.com/watch?v=t8QfsOEQrgM',
+        publisher: {
+          '@id': `${BASE_URL}/#localbusiness`,
+        },
+        potentialAction: {
+          '@type': 'WatchAction',
+          target: 'https://www.youtube.com/watch?v=t8QfsOEQrgM',
+        },
+      });
+
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How much does pressure washing cost in Warrington?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Pricing depends on the area size, surface type, and contamination level. A typical residential driveway clean in Warrington starts from around £150, with larger or heavily contaminated areas costing more. We provide free, written quotes after assessing your property.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Will pressure washing damage my driveway or patio?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Not when carried out by experienced professionals. We assess every surface before cleaning and select the correct pressure, nozzle, and technique for the material. Block paving, natural stone, concrete, tarmac, and render each require a different approach.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the difference between pressure washing and soft washing?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Pressure washing uses high-pressure water to physically remove contamination from hard surfaces such as driveways, patios, and concrete. Soft washing applies specialist cleaning chemicals at low pressure to treat surfaces that high pressure would damage, such as render, roofing, and painted walls.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How often should I have my driveway pressure washed?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: "In Warrington's climate, most driveways benefit from annual cleaning. Properties with heavy tree coverage, north-facing surfaces, or persistent shade may need cleaning every six to nine months. Applying a protective sealant after cleaning extends the interval between cleans significantly.",
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you re-sand block paving after cleaning?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Pressure washing block paving inevitably displaces some jointing sand. We carry kiln-dried sand and re-fill all joints after cleaning as standard. This is essential for maintaining the structural integrity of the paving.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you offer commercial pressure washing contracts in Warrington?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. We provide scheduled maintenance contracts for commercial properties across Warrington, including business parks, retail units, and industrial estates. Regular cleaning on a monthly, quarterly, or bi-annual schedule keeps premises consistently presentable.',
+            },
+          },
+        ],
+      });
+    }
+
+    if (serviceSlug === 'pressure-washing' && locationSlug === 'liverpool') {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: 'Professional Pressure Washing and Exterior Cleaning in Liverpool by R.R.M External Cleaning Specialist',
+        description: 'Watch R.R.M External Cleaning Specialist carry out professional pressure washing and exterior cleaning work in Liverpool, Merseyside. This video demonstrates our commercial-grade equipment, careful technique, and quality results on residential and commercial properties.',
+        thumbnailUrl: 'https://img.youtube.com/vi/t8QfsOEQrgM/maxresdefault.jpg',
+        uploadDate: '2024-01-15',
+        embedUrl: 'https://www.youtube.com/embed/t8QfsOEQrgM',
+        contentUrl: 'https://www.youtube.com/watch?v=t8QfsOEQrgM',
+        publisher: {
+          '@id': `${BASE_URL}/#localbusiness`,
+        },
+        potentialAction: {
+          '@type': 'WatchAction',
+          target: 'https://www.youtube.com/watch?v=t8QfsOEQrgM',
+        },
+      });
+
+      // FAQPage schema for pressure washing Liverpool
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How much does pressure washing cost in Liverpool?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Prices depend on the size of the area, the surface type, and the level of contamination. A typical residential driveway clean in Liverpool starts from around £150, while larger or heavily contaminated areas cost more. We provide free, written quotes after assessing your property.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Will pressure washing damage my driveway or patio?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Not when done professionally. We assess every surface before cleaning and select the correct pressure, nozzle, and technique for the material. Block paving, natural stone, concrete, tarmac, and render all require different approaches.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the difference between pressure washing and soft washing?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Pressure washing uses high-pressure water to physically remove contamination from hard surfaces like driveways, patios, and concrete. Soft washing uses low-pressure application of specialist cleaning chemicals to treat surfaces that high pressure would damage, such as render, roofing, and painted walls.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How often should I have my driveway pressure washed?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: "In Liverpool's climate, most driveways benefit from annual cleaning. Properties with heavy tree coverage, north-facing surfaces, or persistent shade may need cleaning every six to nine months. Applying a sealant after cleaning extends the interval between cleans significantly.",
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you re-sand block paving after cleaning?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Pressure washing block paving inevitably removes some of the jointing sand. We carry kiln-dried sand and re-fill all joints after cleaning as standard. This is essential for maintaining the structural integrity of the paving.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Do you offer commercial pressure washing contracts in Liverpool?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. We provide scheduled maintenance contracts for commercial properties across Liverpool. Regular cleaning on a monthly, quarterly, or bi-annual basis keeps premises consistently clean and typically costs less per visit than one-off reactive cleans.',
+            },
+          },
+        ],
+      });
+    }
+
     if (serviceSlug === 'gutter-cleaning' && locationSlug === 'skelmersdale') {
       schemas.push({
         '@context': 'https://schema.org',

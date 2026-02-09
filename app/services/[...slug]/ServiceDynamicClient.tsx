@@ -16,8 +16,16 @@ import { GutterHuyton } from '@/pageComponents/gutter/GutterHuyton';
 import { GutterLymm } from '@/pageComponents/gutter/GutterLymm';
 import { GutterNewtonLeWillows } from '@/pageComponents/gutter/GutterNewtonLeWillows';
 
+// Dedicated pressure washing location-specific page components
+import { PressureLiverpool } from '@/pageComponents/pressure/PressureLiverpool';
+import { PressureWarrington } from '@/pageComponents/pressure/PressureWarrington';
+
 // Map of service/location combinations to dedicated components
 const locationPages: Record<string, Record<string, React.ComponentType>> = {
+  'pressure-washing': {
+    'liverpool': PressureLiverpool,
+    'warrington': PressureWarrington,
+  },
   'gutter-cleaning': {
     'skelmersdale': GutterSkelmersdale,
     'warrington': GutterWarrington,
