@@ -101,7 +101,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
-        <link rel="canonical" href="https://rrmexternalcleaningspecialist.co.uk" />
         <link rel="icon" type="image/webp" href="/logo.webp" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/logo.webp" />
@@ -119,7 +118,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              '@id': 'https://rrmexternalcleaningspecialist.co.uk/#organization',
+              '@id': 'https://rrmexternalcleaningspecialist.co.uk/#localbusiness',
               name: 'R.R.M External Cleaning Specialist',
               description:
                 'Professional exterior cleaning services in Newton-le-Willows, Warrington, and Greater Manchester',
@@ -135,35 +134,28 @@ export default function RootLayout({
                 addressCountry: 'GB',
               },
               areaServed: [
-                {
-                  '@type': 'City',
-                  name: 'Newton-le-Willows',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Warrington',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Golborne',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Huyton',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Lymm',
-                },
-                {
-                  '@type': 'State',
-                  name: 'Greater Manchester',
-                },
+                { '@type': 'City', name: 'Newton-le-Willows' },
+                { '@type': 'City', name: 'Warrington' },
+                { '@type': 'City', name: 'St Helens' },
+                { '@type': 'City', name: 'Widnes' },
+                { '@type': 'City', name: 'Liverpool' },
+                { '@type': 'City', name: 'Manchester' },
+                { '@type': 'City', name: 'Golborne' },
+                { '@type': 'City', name: 'Huyton' },
+                { '@type': 'City', name: 'Lymm' },
+                { '@type': 'City', name: 'Wigan' },
+                { '@type': 'City', name: 'Skelmersdale' },
+                { '@type': 'State', name: 'Greater Manchester' },
               ],
               image: 'https://rrmexternalcleaningspecialist.co.uk/logo.webp',
               priceRange: '$$',
-              ratingValue: '5',
               foundingDate: '2016',
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                opens: '00:00',
+                closes: '23:59',
+              },
               sameAs: [
                 'https://www.facebook.com/rrmcleaning',
                 'https://www.instagram.com/rrmcleaning',
@@ -179,6 +171,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
+              '@id': 'https://rrmexternalcleaningspecialist.co.uk/#organization',
               name: 'R.R.M External Cleaning Specialist',
               url: 'https://rrmexternalcleaningspecialist.co.uk',
               logo: 'https://rrmexternalcleaningspecialist.co.uk/logo.webp',

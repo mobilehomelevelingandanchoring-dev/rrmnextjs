@@ -107,39 +107,6 @@ export function ContactInfo({ variant = 'default' }: ContactInfoProps) {
         })}
       </div>
 
-      {/* Structured Data - Schema.org LocalBusiness */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: 'R.R.M Exterior Cleaning Specialist',
-            image: '/logo.webp',
-            description: 'Professional pressure washing & exterior cleaning services',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: '9 Noon Ct',
-              addressLocality: 'Newton-le-Willows',
-              postalCode: 'WA12 8QY',
-              addressCountry: 'GB',
-            },
-            telephone: '+44 7845 463877',
-            email: 'rrmexternalcleaning@gmail.com',
-            hoursOfOperation: {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-              opens: '00:00',
-              closes: '23:59',
-            },
-            sameAs: [
-              'https://www.youtube.com/@R.R.MExternalCleaning',
-              'https://www.facebook.com/profile.php?id=61556594193490',
-              'https://www.instagram.com/reel/DOX4E-KiNof/',
-            ],
-          }),
-        }}
-      />
     </article>
   );
 }

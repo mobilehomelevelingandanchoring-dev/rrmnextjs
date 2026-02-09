@@ -302,7 +302,7 @@ export function Footer() {
       </div>
 
       {/* Hidden metadata for SEO */}
-      <meta itemProp="url" content="https://rrmexternalcleaning.co.uk" />
+      <meta itemProp="url" content="https://rrmexternalcleaningspecialist.co.uk" />
     </footer>
   );
 }
