@@ -1,5 +1,9 @@
-import FAQPageContent from '@/pageComponents/FAQ';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const FAQ = dynamic(() => import('@/pageComponents/FAQ'), {
+  loading: () => <div>Loading FAQ...</div>,
+});
 
 const BASE_URL = 'https://rrmexternalcleaningspecialist.co.uk';
 
@@ -82,7 +86,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <FAQPageContent />
+      <FAQ />
     </>
   );
 }
