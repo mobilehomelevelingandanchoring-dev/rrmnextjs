@@ -28,6 +28,7 @@ const serviceDisplayNames: Record<string, string> = {
   'render-cleaning': 'Render Cleaning',
   'soft-washing': 'Soft Washing',
   'moss-removal': 'Moss Removal',
+  'exterior-cleaning': 'Exterior Cleaning',
 };
 
 // Metadata for location-specific service pages
@@ -88,6 +89,52 @@ const locationMeta: Record<string, Record<string, { title: string; description: 
       description: 'Professional gutter cleaning in Newton-le-Willows. Fully insured local gutter cleaners since 2016. Call 07845 463877.',
     },
   },
+  'exterior-cleaning': {
+    'wigan': {
+      title: 'Exterior Cleaning Services in Wigan | Professional Property Maintenance',
+      description: 'Professional exterior cleaning in Wigan. Pressure washing, soft washing, driveway, roof & gutter cleaning. Free quote: 07845 463877',
+    },
+    'skelmersdale': {
+      title: 'Exterior Cleaning Skelmersdale | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Skelmersdale. Pressure washing, soft washing, and property maintenance. Call 07845 463877.',
+    },
+    'warrington': {
+      title: 'Exterior Cleaning Warrington | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Warrington. Pressure washing, soft washing, driveway and roof cleaning. Call 07845 463877.',
+    },
+    'liverpool': {
+      title: 'Exterior Cleaning Liverpool | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Liverpool. Pressure washing, soft washing, and complete property maintenance. Call 07845 463877.',
+    },
+    'manchester': {
+      title: 'Exterior Cleaning Manchester | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Manchester. Pressure washing, soft washing, driveway and roof cleaning. Call 07845 463877.',
+    },
+    'st-helens': {
+      title: 'Exterior Cleaning St Helens | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in St Helens. Pressure washing, soft washing, and gutter cleaning services. Call 07845 463877.',
+    },
+    'widnes': {
+      title: 'Exterior Cleaning Widnes | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Widnes. Pressure washing, soft washing, and property maintenance. Call 07845 463877.',
+    },
+    'golborne': {
+      title: 'Exterior Cleaning Golborne | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Golborne. Pressure washing, soft washing, and driveway cleaning. Call 07845 463877.',
+    },
+    'huyton': {
+      title: 'Exterior Cleaning Huyton | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Huyton. Pressure washing, soft washing, and complete property maintenance. Call 07845 463877.',
+    },
+    'lymm': {
+      title: 'Exterior Cleaning Lymm | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Lymm. Pressure washing, soft washing, and property maintenance. Call 07845 463877.',
+    },
+    'newton-le-willows': {
+      title: 'Exterior Cleaning Newton-le-Willows | R.R.M External Cleaning',
+      description: 'Professional exterior cleaning in Newton-le-Willows. Pressure washing, soft washing, and driveway cleaning. Call 07845 463877.',
+    },
+  },
 };
 
 // Generic service metadata
@@ -123,6 +170,10 @@ const serviceMeta: Record<string, { title: string; description: string }> = {
   'moss-removal': {
     title: 'Professional Moss Removal Services',
     description: 'Specialist moss and algae removal from roofs and surfaces with biocidal treatment. Call 07845 463877.',
+  },
+  'exterior-cleaning': {
+    title: 'Professional Exterior Cleaning Services',
+    description: 'Complete exterior cleaning including pressure washing, soft washing, driveway, roof, and gutter cleaning. Call 07845 463877.',
   },
 };
 
