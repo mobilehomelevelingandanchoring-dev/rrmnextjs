@@ -55,6 +55,14 @@ const areasData: Record<string, {
     services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
     landmarks: 'We serve all of Lymm village and surrounding areas, including properties near Lymm Dam, the canal, and the various residential estates throughout this popular Cheshire village.',
   },
+  'wigan': {
+    name: 'Wigan',
+    description: 'Professional exterior cleaning services for homes and businesses in Wigan',
+    intro: 'Wigan is one of our key service areas, easily accessible from our Newton-le-Willows base. We regularly work with homeowners and commercial clients across the Wigan borough, from the town centre to outlying villages. Whether you have a traditional terraced property or a modern build, our experienced team delivers thorough, reliable exterior cleaning tailored to your property.',
+    climate: 'Wigan\'s North West location means properties are regularly exposed to rain, humidity, and damp conditions that encourage moss, algae, and lichen growth on roofs, driveways, and rendered walls. Shaded areas and properties near Wigan\'s many green spaces are particularly prone to organic buildup, making professional exterior cleaning essential for maintaining kerb appeal and preventing long-term surface damage.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We cover all areas of Wigan borough, including the town centre, Standish, Aspull, Hindley, Ince, Pemberton, Shevington, and surrounding villages. Our proximity to Wigan means fast response times and flexible scheduling for both one-off cleans and regular maintenance.',
+  },
   'greater-manchester': {
     name: 'Greater Manchester',
     description: 'Exterior cleaning services across the Greater Manchester region',

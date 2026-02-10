@@ -29,6 +29,11 @@ const areas = [
     href: '/areas/warrington',
   },
   {
+    name: 'Wigan',
+    description: 'Professional exterior cleaning for homes and businesses across the Wigan borough.',
+    href: '/areas/wigan',
+  },
+  {
     name: 'Lymm',
     description: 'Serving Lymm village and surrounding areas with premium cleaning services.',
     href: '/areas/lymm',
