@@ -1,4 +1,8 @@
 import type { MetadataRoute } from 'next';
+import { services } from '@/data/services';
+import { locations } from '@/data/locations';
+import { problems } from '@/data/problems';
+import { surfaces } from '@/data/surfaces';
 
 const BASE_URL = 'https://rrmexternalcleaningspecialist.co.uk';
 
@@ -20,73 +24,56 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/terms-conditions`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
-  // Service pages
-  const services = [
-    'pressure-washing',
-    'driveway-cleaning',
-    'roof-cleaning',
-    'gutter-cleaning',
-    'window-cleaning',
-    'render-cleaning',
-    'soft-washing',
-    'moss-removal',
-  ];
-
-  const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
-    url: `${BASE_URL}/services/${service}`,
+  // Service pages (dynamically from data)
+  const serviceSlugs = Object.keys(services);
+  const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+    url: `${BASE_URL}/services/${slug}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
-  // Location-specific service pages (gutter cleaning)
-  const gutterLocations = [
-    'skelmersdale',
-    'warrington',
-    'liverpool',
-    'manchester',
-    'st-helens',
-    'widnes',
-    'wigan',
-    'golborne',
-    'huyton',
-    'lymm',
-    'newton-le-willows',
-  ];
+  // Service + Location combination pages
+  const serviceLocationPages: MetadataRoute.Sitemap = serviceSlugs.flatMap((serviceSlug) => {
+    const service = services[serviceSlug];
+    return service.locations.map((locationSlug) => ({
+      url: `${BASE_URL}/services/${serviceSlug}/${locationSlug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
+  });
 
-  const gutterLocationPages: MetadataRoute.Sitemap = gutterLocations.map((location) => ({
-    url: `${BASE_URL}/services/gutter-cleaning/${location}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
-
-  // Location pages
-  const locations = [
-    'newton-le-willows',
-    'warrington',
-    'st-helens',
-    'widnes',
-    'liverpool',
-    'manchester',
-    'golborne',
-    'huyton',
-    'lymm',
-    'wigan',
-    'skelmersdale',
-    'greater-manchester',
-  ];
-
-  const locationPages: MetadataRoute.Sitemap = locations.map((location) => ({
-    url: `${BASE_URL}/locations/${location}`,
+  // Location pages (dynamically from data)
+  const locationSlugs = Object.keys(locations);
+  const locationPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
+    url: `${BASE_URL}/locations/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  // Area pages
-  const areaPages: MetadataRoute.Sitemap = locations.map((area) => ({
-    url: `${BASE_URL}/areas/${area}`,
+  // Area pages (mirror of locations)
+  const areaPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
+    url: `${BASE_URL}/areas/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // Problem pages (dynamically from data)
+  const problemSlugs = Object.keys(problems);
+  const problemPages: MetadataRoute.Sitemap = problemSlugs.map((slug) => ({
+    url: `${BASE_URL}/problems/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // Surface pages (dynamically from data)
+  const surfaceSlugs = Object.keys(surfaces);
+  const surfacePages: MetadataRoute.Sitemap = surfaceSlugs.map((slug) => ({
+    url: `${BASE_URL}/surfaces/${slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
@@ -95,8 +82,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...servicePages,
-    ...gutterLocationPages,
+    ...serviceLocationPages,
     ...locationPages,
     ...areaPages,
+    ...problemPages,
+    ...surfacePages,
   ];
 }
