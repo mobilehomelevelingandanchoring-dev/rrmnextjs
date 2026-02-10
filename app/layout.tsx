@@ -4,7 +4,7 @@ import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { QueryClientProvider } from '@tanstack/react-query';
 import QueryClientWrapper from '@/components/QueryClientWrapper';
-import '../src/index.css';
+import '@/index.css';
 
 export const viewport: Viewport = {
   width: 'device-width',
