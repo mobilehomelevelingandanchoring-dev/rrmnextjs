@@ -41,6 +41,31 @@ const areas = [
     href: '/areas/golborne',
   },
   {
+    name: 'Lowton',
+    description: 'Expert pressure washing and driveway cleaning services for Lowton residents and businesses.',
+    href: '/areas/lowton',
+  },
+  {
+    name: 'Haydock',
+    description: 'Professional exterior cleaning and pressure washing services across Haydock.',
+    href: '/areas/haydock',
+  },
+  {
+    name: 'Earlestown',
+    description: 'Expert pressure washing and driveway cleaning services for Earlestown homes and businesses.',
+    href: '/areas/earlestown',
+  },
+  {
+    name: 'Burtonwood',
+    description: 'Professional pressure washing and exterior cleaning services in Burtonwood.',
+    href: '/areas/burtonwood',
+  },
+  {
+    name: 'Ashton-in-Makerfield',
+    description: 'Expert exterior cleaning and pressure washing services for Ashton-in-Makerfield.',
+    href: '/areas/ashton-in-makerfield',
+  },
+  {
     name: 'Huyton',
     description: 'Expert driveway cleaning and roof soft washing services for Huyton residents.',
     href: '/areas/huyton',
@@ -80,8 +105,7 @@ export function AreasSection() {
             Pressure Washing & Exterior Cleaning Across the North West
           </h2>
           <p className="text-muted-foreground text-lg">
-            Based in Newton-le-Willows, R.R.M Exterior Cleaning provides expert <strong>pressure washing</strong>, <strong>driveway cleaning</strong>, 
-            and <strong>roof soft washing</strong> throughout Warrington, St Helens, Widnes, Liverpool, Manchester, Wigan, Skelmersdale, and surrounding North West areas.
+            Based in Newton-le-Willows, we've built our reputation serving the wider Wigan Borough and surrounding areas. We regularly help customers across Earlestown, Golborne, Lowton, Haydock, Burtonwood, and Ashton-in-Makerfield. Expand your search below to see if we cover your area, or get in touch to discuss your postcode (WA12, WA11, WA3).
           </p>
         </div>
 

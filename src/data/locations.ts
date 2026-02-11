@@ -353,6 +353,86 @@ export const locations: Record<string, LocationEntity> = {
     nearbyLocations: ['oldham'],
     metaTitle: 'Professional Exterior Cleaning in Uppermill | Moorland Service',
     metaDescription: 'Expert exterior cleaning for Uppermill moorland properties. Roof cleaning, gutter cleaning, soft washing. Specialized service.'
+  },
+
+  'lowton': {
+    slug: 'lowton',
+    name: 'Lowton',
+    displayName: 'Lowton',
+    region: 'Wigan',
+    description: 'Professional pressure washing and driveway cleaning in Lowton. Expert exterior cleaning services for residential and commercial properties.',
+    localContext: 'Lowton experiences typical North West England weather with frequent rainfall and humidity that encourages moss and algae growth on driveways, patios, roofs, and rendered walls. Properties near woodland and green spaces are especially prone to organic growth.',
+    whyCleaningNeeded: 'Lowton\'s damp climate and green surroundings mean properties accumulate biological growth quickly. Regular professional cleaning maintains appearance and prevents long-term surface damage.',
+    commonProblems: ['moss-growth', 'algae-discoloration', 'organic-buildup', 'grime-accumulation', 'slip-hazards'],
+    allServices: ['pressure-washing', 'driveway-cleaning', 'roof-cleaning', 'gutter-cleaning', 'patio-cleaning', 'render-cleaning', 'window-cleaning', 'soft-washing'],
+    localPostcode: 'WA3',
+    nearbyLocations: ['newton-le-willows', 'golborne', 'haydock'],
+    metaTitle: 'Pressure Washing in Lowton | Professional Driveway & Roof Cleaning',
+    metaDescription: 'Professional pressure washing and driveway cleaning in Lowton. Expert exterior cleaning, roof soft washing. Free quotes. Local service since 2016.'
+  },
+
+  'haydock': {
+    slug: 'haydock',
+    name: 'Haydock',
+    displayName: 'Haydock',
+    region: 'Wigan',
+    description: 'Professional pressure washing and exterior cleaning in Haydock. Expert service for residential and commercial properties throughout the area.',
+    localContext: 'Haydock properties are exposed to North West weather challenges with regular rainfall, high humidity, and moist conditions that accelerate moss, algae, and lichen growth. Industrial and commercial areas accumulate additional grime and pollution on exterior surfaces.',
+    whyCleaningNeeded: 'Haydock\'s mix of residential, industrial, and commercial properties requires professional maintenance to maintain appearance and prevent damage. Regular cleaning is essential for both aesthetics and property protection.',
+    commonProblems: ['moss-growth', 'algae-buildup', 'pollution-staining', 'industrial-grime', 'lichen-growth', 'slip-hazards'],
+    allServices: ['pressure-washing', 'driveway-cleaning', 'roof-cleaning', 'gutter-cleaning', 'patio-cleaning', 'render-cleaning', 'window-cleaning', 'commercial-cleaning', 'soft-washing'],
+    localPostcode: 'WA11',
+    nearbyLocations: ['newton-le-willows', 'lowton', 'wigan'],
+    businessesInArea: 'Haydock has a mix of retail, industrial, and commercial properties requiring professional exterior maintenance.',
+    metaTitle: 'Pressure Washing Haydock | Professional Exterior Cleaning',
+    metaDescription: 'Expert pressure washing and exterior cleaning in Haydock. Driveway cleaning, roof soft washing, commercial cleaning. Local professional service.'
+  },
+
+  'earlestown': {
+    slug: 'earlestown',
+    name: 'Earlestown',
+    displayName: 'Earlestown',
+    region: 'Merseyside',
+    description: 'Professional pressure washing and driveway cleaning in Earlestown. Expert exterior cleaning services minutes from our Newton-le-Willows base.',
+    localContext: 'Earlestown experiences typical North West England weather with regular rainfall and humidity that encourages moss and algae growth. Properties near the canal and surrounding green spaces often accumulate organic growth more quickly.',
+    whyCleaningNeeded: 'Earlestown\'s damp climate and proximity to water features mean properties need regular professional cleaning. Quick response times and local knowledge provide value for customers.',
+    commonProblems: ['moss-growth', 'algae-discoloration', 'near-canal-dampness', 'grime-accumulation', 'slip-hazards'],
+    allServices: ['pressure-washing', 'driveway-cleaning', 'roof-cleaning', 'gutter-cleaning', 'patio-cleaning', 'render-cleaning', 'window-cleaning', 'soft-washing'],
+    localPostcode: 'WA10',
+    nearbyLocations: ['newton-le-willows', 'lowton', 'warrington'],
+    metaTitle: 'Pressure Washing in Earlestown | Professional Driveway Cleaning',
+    metaDescription: 'Professional pressure washing and driveway cleaning in Earlestown. Expert exterior cleaning, quick response times. Free quotes available.'
+  },
+
+  'burtonwood': {
+    slug: 'burtonwood',
+    name: 'Burtonwood',
+    displayName: 'Burtonwood',
+    region: 'Warrington',
+    description: 'Professional exterior cleaning and pressure washing in Burtonwood. Expert service for residential and semi-rural properties.',
+    localContext: 'Burtonwood properties experience North West England weather patterns with frequent rain and moisture that promotes moss, algae, and grime buildup. The semi-rural nature means many properties are surrounded by greenery, accelerating organic growth.',
+    whyCleaningNeeded: 'Burtonwood\'s semi-rural setting with green surroundings means properties accumulate biological growth more quickly. Regular professional cleaning is valuable for maintaining property appearance.',
+    commonProblems: ['moss-growth', 'algae-discoloration', 'tree-shade-effects', 'organic-buildup', 'grime-accumulation'],
+    allServices: ['pressure-washing', 'driveway-cleaning', 'roof-cleaning', 'gutter-cleaning', 'patio-cleaning', 'render-cleaning', 'window-cleaning', 'soft-washing'],
+    nearbyLocations: ['newton-le-willows', 'warrington', 'lymm'],
+    metaTitle: 'Pressure Washing Burtonwood | Professional Exterior Cleaning',
+    metaDescription: 'Professional pressure washing and exterior cleaning in Burtonwood. Expert driveway and roof cleaning. Local professional service.'
+  },
+
+  'ashton-in-makerfield': {
+    slug: 'ashton-in-makerfield',
+    name: 'Ashton-in-Makerfield',
+    displayName: 'Ashton-in-Makerfield',
+    region: 'Wigan',
+    description: 'Professional pressure washing and exterior cleaning in Ashton-in-Makerfield. Expert service for residential and commercial properties.',
+    localContext: 'Ashton-in-Makerfield properties are regularly exposed to North West England rain and high humidity that accelerates moss, algae, and lichen growth. The industrial heritage of the area means some properties accumulate additional grime and pollution on exterior surfaces.',
+    whyCleaningNeeded: 'Ashton-in-Makerfield\'s industrial context and damp climate mean properties benefit from periodic professional cleaning to remove accumulated grime, pollution, and biological growth.',
+    commonProblems: ['moss-growth', 'algae-buildup', 'industrial-grime', 'pollution-staining', 'surface-deterioration'],
+    allServices: ['pressure-washing', 'driveway-cleaning', 'roof-cleaning', 'gutter-cleaning', 'patio-cleaning', 'render-cleaning', 'window-cleaning', 'commercial-cleaning', 'soft-washing'],
+    nearbyLocations: ['wigan', 'lowton', 'golborne'],
+    businessesInArea: 'Ashton-in-Makerfield has residential and commercial properties that benefit from professional exterior maintenance.',
+    metaTitle: 'Pressure Washing Ashton-in-Makerfield | Professional Exterior Cleaning',
+    metaDescription: 'Professional pressure washing and exterior cleaning in Ashton-in-Makerfield. Driveway cleaning, roof cleaning. Local expert service.'
   }
 };
 

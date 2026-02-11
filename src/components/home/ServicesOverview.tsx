@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { 
-  Droplets, 
-  Home, 
-  Layers, 
+import {
+  Droplets,
+  Home,
+  Layers,
   Wind,
   Sparkles,
   Square,
-  ArrowRight 
+  ArrowRight
 } from 'lucide-react';
 
 const services = [
@@ -89,10 +90,14 @@ export function ServicesOverview() {
               href={service.href}
               className="group card-elevated relative overflow-hidden flex flex-col min-h-[320px] rounded-xl shadow-lg"
             >
-              {/* Dynamic Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                style={{ backgroundImage: `url('/img${index + 1}.png')` }}
+              {/* Optimized Background Image */}
+              <Image
+                src={`/img${index + 1}.png`}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
 
               {/* Dark Overlay for Text Readability */}

@@ -5,20 +5,20 @@ import { AreasSection } from '@/components/home/AreasSection';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { FAQPreview } from '@/components/home/FAQPreview';
 import { CTASection } from '@/components/home/CTASection';
-import VideoSection from '@/components/VideoSection';
+import { LazyVideoSection } from '@/components/LazyVideoSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home | Professional Exterior Cleaning Services',
+  title: 'Pressure Washing Newton-le-Willows | R.R.M Cleaning',
   description:
-    'Professional pressure washing, driveway cleaning, roof soft washing, and exterior cleaning services in Newton-le-Willows, Warrington, and Greater Manchester.',
+    'Expert pressure washing and driveway cleaning in Newton-le-Willows & surrounding areas. Fully insured, 5-star rated. Free quote available. Established 2016.',
 };
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
-      <VideoSection />
+      <LazyVideoSection />
       <ServicesOverview />
       <WhyChooseUs />
       <AreasSection />

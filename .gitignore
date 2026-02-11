@@ -52,3 +52,5 @@ coverage
 # Misc
 *.tsbuildinfo
 next-env.d.ts
+nul
+rrmnextjs-backup.git/

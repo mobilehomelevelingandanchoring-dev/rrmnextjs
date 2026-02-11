@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ChevronRight, Phone, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
+import { LiteYouTube } from '@/components/LiteYouTube';
 
 export function ExteriorCleaningWigan() {
   useEffect(() => {
@@ -104,19 +105,8 @@ export function ExteriorCleaningWigan() {
             <section className="mb-6">
               <h2 className="text-2xl font-bold text-foreground mb-4">See Professional Exterior Cleaning in Action</h2>
               <p className="text-muted-foreground mb-6">Watch how our expert team transforms exterior surfaces using advanced pressure washing and soft washing techniques. This video demonstrates the methods we use to safely restore your property's appearance while protecting delicate surfaces.</p>
-              <div className="bg-black rounded-lg overflow-hidden shadow-md aspect-video w-full mb-4 max-w-2xl mx-auto">
-                <iframe 
-                  width="100%" 
-                  height="100%"
-                  src="https://www.youtube.com/embed/g9pXmWrxHfg?si=MeKw2-o8MusW-8nN"
-                  title="Professional Exterior Cleaning Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  loading="lazy"
-                  className="w-full h-full"
-                ></iframe>
+              <div className="mb-4 max-w-2xl mx-auto">
+                <LiteYouTube videoId="g9pXmWrxHfg" title="Professional Exterior Cleaning Video" className="rounded-lg shadow-md" />
               </div>
               <p className="text-sm text-muted-foreground max-w-2xl mx-auto">Our video shows real exterior cleaning results: powerful pressure washing removing years of buildup, gentle soft washing protecting delicate surfaces, and the complete transformation that professional cleaning delivers to Wigan properties.</p>
             </section>

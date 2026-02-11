@@ -40,8 +40,11 @@ export function CTASection() {
               </a>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-primary-foreground/70">
-            Serving Newton-le-Willows, Warrington, and Greater Manchester since 2016
+          <p className="mt-6 text-sm text-primary-foreground/70 font-medium">
+            Established 2016 • Fully Insured • 5-Star Rated • Fast Response Times
+          </p>
+          <p className="mt-2 text-sm text-primary-foreground/70">
+            Serving Newton-le-Willows, Warrington, and Greater Manchester
           </p>
         </div>
       </div>

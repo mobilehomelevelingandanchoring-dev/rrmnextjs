@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Star } from 'lucide-react';
@@ -34,18 +35,14 @@ export function Header() {
 
           {/* ✅ LOGO – BIG & ALIGNED */}
           <Link href="/" className="flex items-center gap-3 group">
-            <img
+            <Image
               src="/logo.webp"
               alt="R.R.M External Cleaning Logo"
-              className="
-                h-14
-                sm:h-16
-                lg:h-20
-                w-auto
-                transition-transform
-                duration-300
-                group-hover:scale-105
-              "
+              width={80}
+              height={80}
+              priority
+              fetchPriority="high"
+              className="h-14 sm:h-16 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 

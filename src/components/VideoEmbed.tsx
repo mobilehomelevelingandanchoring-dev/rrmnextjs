@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { LiteYouTube } from '@/components/LiteYouTube';
 
 interface VideoEmbedProps {
   title: string;
@@ -16,27 +17,11 @@ const VideoEmbed = ({
   description,
   relatedPageUrl,
   relatedPageLabel,
-  location,
-  service,
 }: VideoEmbedProps) => {
-  const embedUrl = 'https://www.youtube.com/embed/YGLP1Hm5MFE?si=ciF9QTxBfTjJU7Jv';
-  const ariaLabel = `${title}${location ? ` in ${location}` : ''}${service ? ` - ${service}` : ''}`;
-
   return (
     <article className="my-12 bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200">
       <figure className="flex flex-col">
-        <div className="relative w-full pt-[56.25%] bg-black overflow-hidden">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            src={embedUrl}
-            title={title}
-            aria-label={ariaLabel}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
+        <LiteYouTube videoId="YGLP1Hm5MFE" title={title} />
         <figcaption className="p-6 bg-gray-50">
           <h3 className="text-lg font-semibold text-primary mb-2">
             {title}

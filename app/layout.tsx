@@ -1,10 +1,23 @@
 import type { Metadata, Viewport } from 'next';
-import { Toaster } from '@/components/ui/toaster';
-import { Toaster as Sonner } from '@/components/ui/sonner';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { QueryClientProvider } from '@tanstack/react-query';
-import QueryClientWrapper from '@/components/QueryClientWrapper';
 import '@/index.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter',
+  preload: true,
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  display: 'swap',
+  variable: '--font-display',
+  preload: true,
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -98,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" type="image/webp" href="/logo.webp" />
@@ -106,11 +119,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/logo.webp" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
-        />
-
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
@@ -135,18 +146,28 @@ export default function RootLayout({
               },
               areaServed: [
                 { '@type': 'City', name: 'Newton-le-Willows' },
+                { '@type': 'City', name: 'Lowton' },
+                { '@type': 'City', name: 'Haydock' },
+                { '@type': 'City', name: 'Golborne' },
+                { '@type': 'City', name: 'Earlestown' },
+                { '@type': 'City', name: 'Burtonwood' },
+                { '@type': 'City', name: 'Ashton-in-Makerfield' },
                 { '@type': 'City', name: 'Warrington' },
                 { '@type': 'City', name: 'St Helens' },
                 { '@type': 'City', name: 'Widnes' },
                 { '@type': 'City', name: 'Liverpool' },
                 { '@type': 'City', name: 'Manchester' },
-                { '@type': 'City', name: 'Golborne' },
                 { '@type': 'City', name: 'Huyton' },
                 { '@type': 'City', name: 'Lymm' },
                 { '@type': 'City', name: 'Wigan' },
                 { '@type': 'City', name: 'Skelmersdale' },
                 { '@type': 'State', name: 'Greater Manchester' },
               ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '5',
+                ratingCount: '1',
+              },
               image: 'https://rrmexternalcleaningspecialist.co.uk/logo.webp',
               priceRange: '$$',
               foundingDate: '2016',
@@ -192,13 +213,9 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col">
-        <QueryClientWrapper>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            {children}
-          </TooltipProvider>
-        </QueryClientWrapper>
+        <TooltipProvider>
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
-'use client';
-
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Star, Shield, Clock } from 'lucide-react';
 
@@ -44,8 +43,7 @@ export function Hero() {
 
             {/* Subtitle with semantic keywords and locations */}
             <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 animate-fade-in-delay-1 leading-relaxed max-w-2xl">
-              R.R.M Exterior Cleaning delivers expert <strong>pressure washing</strong>, <strong>driveway cleaning</strong>, 
-              and <strong>roof soft washing</strong> services from our base in Newton-le-Willows. We proudly serve Warrington, St Helens, Widnes, Liverpool, Manchester, Golborne, Huyton, Lymm, Wigan, Skelmersdale, and across Greater Manchester with comprehensive exterior cleaning solutions.
+              R.R.M Exterior Cleaning has been delivering expert pressure washing and driveway cleaning across Newton-le-Willows since 2016. We're fully insured, 5-star rated, and specialise in transforming dirty driveways, patios, roofs and exterior walls. Whether you need routine maintenance or intensive cleaning, we use the right technique—pressure washing or soft washing—to restore your property without damage. Trusted by hundreds of local homeowners and businesses.
             </p>
 
             {/* CTAs */}
@@ -74,9 +72,14 @@ export function Hero() {
             {/* Decorative Glow behind image */}
             <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full transform translate-x-10 translate-y-10" />
             
-            <img 
-              src="/img1.png" 
-              alt="R.R.M Exterior Cleaning Pressure Washing in action" 
+            <Image
+              src="/img1.png"
+              alt="R.R.M Exterior Cleaning Pressure Washing in action"
+              width={512}
+              height={384}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 512px"
               className="relative w-full max-w-md lg:max-w-lg rounded-2xl shadow-2xl border-4 border-white/10 transform hover:scale-[1.02] transition-all duration-500 object-cover"
             />
           </div>

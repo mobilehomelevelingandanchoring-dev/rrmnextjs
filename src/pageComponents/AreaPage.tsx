@@ -2,10 +2,12 @@
 
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { ContactInfo } from '@/components/ContactInfo';
 import { MapPin, CheckCircle, ArrowRight, Phone } from 'lucide-react';
+import { generateAreaSchema, generateBreadcrumbSchema } from '@/lib/schemas';
 
 const areasData: Record<string, {
   name: string;
@@ -30,6 +32,46 @@ const areasData: Record<string, {
     climate: 'Like neighbouring areas, Golborne properties face challenges from North West weather conditions. Shaded areas and properties near green spaces tend to accumulate more organic growth, making professional cleaning an important part of property maintenance.',
     services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
     landmarks: 'We cover all of Golborne, including residential streets near the High Street, newer developments, and surrounding rural properties. Our local presence means we can often accommodate short-notice requests.',
+  },
+  'lowton': {
+    name: 'Lowton',
+    description: 'Professional pressure washing and driveway cleaning for Lowton residents',
+    intro: 'Lowton is a close neighbouring area and key service location for R.R.M Exterior Cleaning. We\'ve been trusted by Lowton homeowners and businesses for over a decade, delivering professional pressure washing and exterior cleaning tailored to local properties. Whether it\'s a Victorian terrace, modern detached home, or commercial premises, our experienced team delivers results.',
+    climate: 'Lowton properties experience typical North West England weather patterns, with frequent rainfall and humidity that encourages moss and algae growth on driveways, patios, roofs, and rendered walls. Properties near woodland and green spaces in the Lowton area are especially prone to organic growth, making regular professional cleaning essential for maintaining appearance and preventing long-term surface damage.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We serve all areas of Lowton, including Lowton East, Lowton West, and surrounding residential areas. Our proximity means we typically offer same-week scheduling and competitive pricing for local customers.',
+  },
+  'haydock': {
+    name: 'Haydock',
+    description: 'Expert pressure washing and exterior cleaning services in Haydock',
+    intro: 'Haydock is a thriving business and residential area in the Wigan borough, and a key service location for R.R.M Exterior Cleaning. We work with homes and businesses throughout Haydock, from town centre properties to modern residential developments. Our team brings professional expertise and local knowledge to every cleaning project.',
+    climate: 'Haydock properties are exposed to the same North West weather challenges as surrounding areas: regular rainfall, high humidity, and moist conditions that accelerate moss, algae, and lichen growth. Industrial and commercial areas around Haydock can also accumulate additional grime and pollution on exterior surfaces, making periodic professional cleaning important for both residential aesthetics and commercial property maintenance.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We cover all parts of Haydock, from the busy commercial areas near the rail station to residential neighborhoods and surrounding developments. Our local expertise means efficient scheduling and quality service for Haydock customers.',
+  },
+  'earlestown': {
+    name: 'Earlestown',
+    description: 'Professional pressure washing and driveway cleaning in Earlestown',
+    intro: 'Earlestown is just minutes from our Newton-le-Willows base, making it one of our most convenient service areas. We\'ve worked with dozens of Earlestown homeowners and businesses, building a reputation for quick response times and meticulous work. Whether you need driveway cleaning before selling, or regular maintenance for your property, we\'re your local choice.',
+    climate: 'Like all North West England properties, Earlestown homes and businesses face regular exposure to rainfall and humidity that encourages moss, algae, and lichen growth. Properties near the canal and surrounding green spaces often accumulate organic growth more quickly, making professional cleaning an important part of maintenance schedules.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We cover all areas of Earlestown, from the town centre near the railway station to residential estates and surrounding neighborhoods. Our proximity to the area means we can often schedule the same week and offer competitive local pricing.',
+  },
+  'burtonwood': {
+    name: 'Burtonwood',
+    description: 'Expert exterior cleaning and pressure washing services for Burtonwood',
+    intro: 'Burtonwood is in our primary service radius, and we\'re proud to serve this community with professional exterior cleaning. From family homes to period properties, we tailor our approach to suit each customer\'s needs. Our experience with Burtonwood properties means we understand local challenges and deliver solutions that work.',
+    climate: 'Burtonwood properties experience North West England weather patterns, with frequent rain and moisture that promotes moss, algae, and grime buildup on exterior surfaces. The semi-rural nature of Burtonwood means many properties are surrounded by greenery, which can accelerate organic growth—making professional cleaning particularly valuable for maintaining property appearance.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We serve all of Burtonwood, including properties near the motorway services, town centre area, and surrounding residential estates. Our local knowledge and convenient location mean flexibility and value for Burtonwood customers.',
+  },
+  'ashton-in-makerfield': {
+    name: 'Ashton-in-Makerfield',
+    description: 'Professional pressure washing and exterior cleaning in Ashton-in-Makerfield',
+    intro: 'Ashton-in-Makerfield is within our regular service area, and we work with residential and commercial clients throughout the town. We understand the needs of Ashton properties—from traditional working-class homes to newer residential developments—and deliver professional cleaning that respects your property.',
+    climate: 'Ashton-in-Makerfield properties, like others in the North West, are regularly exposed to rain and high humidity that accelerate the growth of moss, algae, and lichen on roofs, driveways, and external walls. The industrial heritage of the area means some properties may also benefit from periodic cleaning to remove accumulated grime and pollution from exterior surfaces.',
+    services: ['Pressure Washing', 'Driveway Cleaning', 'Roof Cleaning', 'Gutter Cleaning', 'Window Cleaning', 'Render Cleaning'],
+    landmarks: 'We cover all areas of Ashton-in-Makerfield, from the town centre to residential suburbs and surrounding neighborhoods. Our local presence and professional expertise mean reliable service and fair pricing for Ashton customers.',
   },
   'huyton': {
     name: 'Huyton',
@@ -77,6 +119,40 @@ export default function AreaPage() {
   const { areaSlug } = useParams<{ areaSlug: string }>();
   const area = areaSlug ? areasData[areaSlug] : null;
 
+  // Inject schema markup
+  useEffect(() => {
+    if (area && areaSlug) {
+      // Remove existing schemas
+      const existingSchemas = document.querySelectorAll('script[data-area-schema], script[data-breadcrumb-schema]');
+      existingSchemas.forEach(el => el.remove());
+
+      // Add area schema
+      const areaScript = document.createElement('script');
+      areaScript.type = 'application/ld+json';
+      areaScript.setAttribute('data-area-schema', 'true');
+      areaScript.textContent = JSON.stringify(generateAreaSchema(area.name, areaSlug));
+      document.head.appendChild(areaScript);
+
+      // Add breadcrumb schema
+      const breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.setAttribute('data-breadcrumb-schema', 'true');
+      breadcrumbScript.textContent = JSON.stringify(
+        generateBreadcrumbSchema([
+          { name: 'Home', url: 'https://rrmexternalcleaningspecialist.co.uk' },
+          { name: 'Service Areas', url: 'https://rrmexternalcleaningspecialist.co.uk/areas' },
+          { name: area.name, url: `https://rrmexternalcleaningspecialist.co.uk/areas/${areaSlug}` },
+        ])
+      );
+      document.head.appendChild(breadcrumbScript);
+
+      return () => {
+        areaScript.remove();
+        breadcrumbScript.remove();
+      };
+    }
+  }, [area, areaSlug]);
+
   if (!area) {
     return (
       <Layout>
@@ -97,6 +173,15 @@ export default function AreaPage() {
       <section className="hero-bg py-16 md:py-24">
         <div className="container-custom">
           <div className="max-w-3xl">
+            {/* Breadcrumbs */}
+            <div className="flex items-center gap-2 text-sm text-accent mb-6 flex-wrap">
+              <Link href="/" className="hover:text-accent-foreground transition-colors">Home</Link>
+              <span className="text-accent/60">/</span>
+              <Link href="/areas" className="hover:text-accent-foreground transition-colors">Service Areas</Link>
+              <span className="text-accent/60">/</span>
+              <span className="text-primary-foreground font-medium">{area.name}</span>
+            </div>
+            
             <div className="flex items-center gap-2 text-accent mb-4">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">Service Area</span>

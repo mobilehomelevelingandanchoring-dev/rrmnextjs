@@ -12,20 +12,20 @@ import { ArrowRight } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'What is the difference between pressure washing and soft washing?',
-    answer: 'Pressure washing uses high-pressure water to clean hard surfaces like driveways and patios. Soft washing uses lower pressure combined with cleaning solutions, making it safer for delicate surfaces like roofs and render. We assess each surface and use the appropriate method to ensure effective cleaning without damage.',
+    question: 'How quickly can you clean my Newton-le-Willows driveway?',
+    answer: 'Most residential driveways take 1-2 hours depending on size and condition. We typically complete jobs within 5-7 working days of booking. For commercial properties or larger areas, we schedule at a time that suits your business. Let us know your urgency on the quote form and we\'ll do our best to accommodate.',
   },
   {
-    question: 'How often should I have my driveway cleaned?',
-    answer: 'For most properties, we recommend driveway cleaning every 12-18 months. However, this varies depending on factors like tree coverage, shade, and local conditions. Areas with heavy moss or algae growth may benefit from more frequent cleaning.',
+    question: 'Why choose soft washing for roofs over pressure washing?',
+    answer: 'Roofs, render, and delicate surfaces are easily damaged by high-pressure water. Our soft washing method uses specialist cleaning solutions and controlled pressure, preventing tile erosion and mortar damage—common problems with standard pressure washing. It\'s safer, longer-lasting, and actually more effective for stubborn moss and algae.',
   },
   {
-    question: 'Is pressure washing safe for all surfaces?',
-    answer: 'No, different surfaces require different approaches. High-pressure washing is ideal for concrete, block paving, and some natural stones. However, softer surfaces, painted areas, and roofing materials need gentler methods. We always assess the surface first and use appropriate techniques.',
+    question: 'Do you serve areas outside Newton-le-Willows like Golborne and Wigan?',
+    answer: 'Yes! We regularly work across Golborne, Lowton, Haydock, Warrington, St Helens, and Wigan. If you\'re in WA12, WA11 or WA3 postcodes, we likely cover you. Contact us with your postcode and we\'ll confirm. We typically charge a mileage fee for areas beyond Newton-le-Willows.',
   },
   {
-    question: 'Do you offer services for commercial properties?',
-    answer: 'Yes, we provide exterior cleaning services for both residential and commercial properties. This includes office buildings, retail units, car parks, and industrial premises. Contact us to discuss your commercial cleaning requirements.',
+    question: 'How is your pricing structured for driveways and patios?',
+    answer: 'We provide free, no-obligation quotes based on size, surface condition, and access. Pricing typically ranges from £150-£400 for residential driveways depending on square footage and cleaning intensity. Block paving, patios, and roof cleaning are quoted individually. Request a quote online or call us for an informal chat about your property.',
   },
 ];
 
