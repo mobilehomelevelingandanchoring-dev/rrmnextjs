@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Areas We Cover | UK Exterior Cleaning Services',
   description:
     'Comprehensive list of areas we service for exterior cleaning including local neighborhoods and regions.',
+  alternates: {
+    canonical: 'https://rrmexternalcleaningspecialist.co.uk/locations',
+  },
 };
 
 export default function AreasPage() {

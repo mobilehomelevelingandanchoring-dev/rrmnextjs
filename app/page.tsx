@@ -5,6 +5,7 @@ import { AreasSection } from '@/components/home/AreasSection';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { FAQPreview } from '@/components/home/FAQPreview';
 import { CTASection } from '@/components/home/CTASection';
+import { TopicalMap } from '@/components/home/TopicalMap';
 import { LazyVideoSection } from '@/components/LazyVideoSection';
 import { Metadata } from 'next';
 
@@ -22,6 +23,7 @@ export default function Home() {
       <ServicesOverview />
       <WhyChooseUs />
       <AreasSection />
+      <TopicalMap />
       <FAQPreview />
       <CTASection />
     </Layout>

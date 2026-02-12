@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/services`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE_URL}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/areas`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // /areas pages are canonical to /locations — excluded from sitemap
     { url: `${BASE_URL}/problems`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/surfaces`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
@@ -53,13 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Area pages (mirror of locations)
-  const areaPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
-    url: `${BASE_URL}/areas/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  // /areas/[slug] pages are canonical to /locations/[slug] — excluded from sitemap
 
   // Problem pages (dynamically from data)
   const problemSlugs = Object.keys(problems);
@@ -84,7 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...serviceLocationPages,
     ...locationPages,
-    ...areaPages,
+    // areaPages excluded — canonical to locationPages
     ...problemPages,
     ...surfacePages,
   ];

@@ -1,6 +1,8 @@
 import AreaPageContent from '@/pageComponents/AreaPage';
 import { Metadata } from 'next';
 
+const BASE_URL = 'https://rrmexternalcleaningspecialist.co.uk';
+
 const areaMetadata: Record<string, { title: string; description: string }> = {
   'lowton': {
     title: 'Pressure Washing in Lowton | Driveway Cleaning Services',
@@ -31,17 +33,25 @@ const areaMetadata: Record<string, { title: string; description: string }> = {
 export async function generateMetadata({ params }: { params: Promise<{ areaSlug: string }> }): Promise<Metadata> {
   const { areaSlug } = await params;
   const meta = areaMetadata[areaSlug];
-  
+
+  const canonical = `${BASE_URL}/locations/${areaSlug}`;
+
   if (!meta) {
     return {
       title: 'Service Area | R.R.M Exterior Cleaning',
       description: 'Professional exterior cleaning services in your area.',
+      alternates: {
+        canonical,
+      },
     };
   }
 
   return {
     title: meta.title,
     description: meta.description,
+    alternates: {
+      canonical,
+    },
   };
 }
 
